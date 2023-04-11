@@ -23,7 +23,7 @@ import { Link } from 'react-router-dom';
         </Typography>
         <Typography variant='subtitle2' sx={{opacity: ".6"}}>{video?.snippet?.description.slice(0,70)}</Typography>
         </Link>
-        <>
+        <Link to={`/channel/${video?.snippet?.channelId}`}>
           <Stack direction={"row"} position={"absolute"} bottom={"10px"} alignItems={"center"} gap={"5px"}>
             <Avatar src={video?.snippet?.thumbnails?.high?.url} />
             <Typography variant={"subtitle2"} color={"gray"}>
@@ -31,7 +31,7 @@ import { Link } from 'react-router-dom';
               <CheckCircle sx={{fontSize: "12px",color:"gray", ml:"5px"}} />
               </Typography> 
           </Stack>
-        </>
+        </Link>
       </CardContent>
     </Card>
   )

@@ -1,7 +1,9 @@
 import { CheckCircle } from "@mui/icons-material"
 import { Box, CardContent, CardMedia, Typography } from "@mui/material"
+import { Link } from "react-router-dom"
 
-const ChannelCard = ({video}) => {
+const ChannelCard = ({video,marginTop}) => {
+    console.log(video);
   return (
     <Box sx={{
         boxShadow: "none",
@@ -12,7 +14,9 @@ const ChannelCard = ({video}) => {
         width:{xs:"356px",md:"320px"},
         height:"326px",
         margin:"auto",
+        marginTop:marginTop
     }}>
+        <Link to={`/channel/${video?.id.channelId ? video?.id.channelId : video?.id}`}>
         <CardContent sx={{
             display:"flex",
             flexDirection:"column",
@@ -20,7 +24,7 @@ const ChannelCard = ({video}) => {
             textAlign:"center",
         }}>
              <CardMedia 
-             image={video?.snippet?.thumbnails?.default?.url}
+             image={video?.snippet?.thumbnails?.high?.url}
               alt={video?.snippet?.title}
               sx={{
                  borderRadius:"50%",
@@ -38,6 +42,7 @@ const ChannelCard = ({video}) => {
                 </Typography>
             )}
         </CardContent>
+        </Link>
     </Box>
   )
 }
