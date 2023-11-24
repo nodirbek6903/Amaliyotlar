@@ -191,6 +191,7 @@ nav .name_sayt{
     transition: 0.5s;
 }
 .three .cards .card:hover{
+    scale: 1.1;
     background:#91916C;
 }
 .three .cards .card:hover p{
@@ -233,8 +234,12 @@ nav .name_sayt{
     align-items: center;
     gap: 1rem;
 }
+.four .cards .card img:hover{
+    scale: 1.1;
+}
 .four .cards .card img{
     width: 140px;
+    transition: .5s;
 }
 .contactUs{
     margin: 80px 0;

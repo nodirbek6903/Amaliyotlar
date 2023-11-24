@@ -17,7 +17,7 @@ const bootstrap = () => {
                             {
                                 text: "Kurslarni ko'rish",
                                 web_app: {
-                                    url: "https://sammi.ac",
+                                    url: "https://web-telegram-bot-nine.vercel.app/",
                                 }
                             }
                         ]
