@@ -4,6 +4,11 @@ const token = "6421968270:AAEmNt9w2onF8iWa3u0A9y5CqSxAWe-ja-k";
 const bot = new TelegramBot(token, { polling: true });
 
 const bootstrap = () => {
+    bot.setMyCommands([
+        {command: "/start",description: "Kurslar haqida ma'lumot"},
+        {command: "/courses",description: "Barcha kurslar"}
+    ])
+
   bot.on("message", async (msg) => {
     const chatId = msg.chat.id;
     const text = msg.text;
@@ -19,7 +24,7 @@ const bootstrap = () => {
                 {
                   text: "Kurslarni ko'rish",
                   web_app: {
-                    url: "https://web-telegram-bot-nine.vercel.app/",
+                    url: "https://web-telegram-bot-nine.vercel.app",
                   },
                 },
               ],
@@ -56,6 +61,21 @@ const bootstrap = () => {
         console.log(error);
       }
     }
+
+
+    if(text === "/course"){
+        await bot.sendMessage(
+            chatId,
+            "nodirbek-myprotfolio.netlify.app saytida to'liq malumot olishingiz mumkin",
+            {
+                reply_markup : {
+                    inline_keyboard : [[{text: "Kurslarni Ko'rish",web_app: {url: "https://web-telegram-bot-nine.vercel.app"}}]]
+                }
+            }
+
+        )
+    }
+
   });
 };
 
