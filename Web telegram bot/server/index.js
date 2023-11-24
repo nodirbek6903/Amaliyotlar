@@ -41,6 +41,7 @@ const bootstrap = () => {
         for (item of data) {
           await bot.sendMessage(chatId, `${item.title} - ${item.quantity}x`);
         }
+        await bot.sendPhoto(chatId, item.Image)
 
         await bot.sendMessage(
           chatId,
