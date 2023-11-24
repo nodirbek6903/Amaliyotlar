@@ -9,7 +9,21 @@ const bootstrap = () => {
         const text = msg.text
 
         if(text === "/start"){
-            await bot.sendMessage(chatId, "nodirbek-myprotfolio.netlify.app saytida Nodirbek bilan bog'lanishingiz mumkin")
+            await bot.sendMessage(chatId, "nodirbek-myprotfolio.netlify.app saytida Nodirbek bilan bog'lanishingiz mumkin",
+            {
+                reply_markup: {
+                    keyboard: [
+                        [
+                            {
+                                text: "Kurslarni ko'rish",
+                                web_app: {
+                                    url: "https://sammi.ac",
+                                }
+                            }
+                        ]
+                    ]
+                }
+            })
         }
     })
 }
